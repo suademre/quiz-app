@@ -1,0 +1,12 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  
+  body {
+    background-color: #F2F2F2;
+    text-align: center;
+  }
