@@ -1,0 +1,37 @@
+.card__create {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 30px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_label {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 15px;
+  /* padding: 20px 0px; */
+}
+
+.create_textarea {
+  border-radius: 20px;
+  border: 2px solid #884bd7;
+  margin-bottom: 20px;
+}
+
+.create_button {
+  width: 20vh;
+  height: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #884bd7;
+  color: white;
+}
+
+.create_button:hover {
+  color: #884bd7;
+  background-color: white;
+}

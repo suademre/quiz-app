@@ -58,9 +58,13 @@ footer{
 }
 
 .footer_icon i{
-    color: lightskyblue;
+    color: #884BD7;
     font-size: 35px;
 }
+
+/* .footer_icon a:hover{
+
+} */
 
 
 
@@ -73,7 +77,7 @@ footer{
     /* width: 100%; */
     height: 40px;
     
-    border-color: navy;
+    border-color: #884BD7;
     border-style: solid;
     border-width: 15px;
     /* border-bottom-color: green; */
