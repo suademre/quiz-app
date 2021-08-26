@@ -1,0 +1,69 @@
+.card-profil {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  padding: 20px 0px;
+  margin-bottom: 40px;
+}
+
+.profil-img {
+  /* display: flex;
+    padding: 10px 20px; */
+  position: relative;
+  margin-bottom: 250px;
+}
+
+img {
+  width: 28vw;
+  height: 20vh;
+  border-radius: 50%;
+  margin: auto 10px;
+  border: 1px solid #884bd7;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.profil-name {
+  position: absolute;
+  top: 60px;
+  left: 43vw;
+}
+
+.tech-skills {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.tech-skills ul {
+  padding-left: 10px;
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+li {
+  width: 90px;
+  height: 30px;
+  background-color: #f2f2f2;
+  padding-top: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: 2px solid #884bd7;
+}
+
+.profil-logaut {
+  width: 20vh;
+  height: 30px;
+  display: block;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #884bd7;
+  color: white;
+  margin-top: 4vh;
+  margin-left: 30vw;
+}
