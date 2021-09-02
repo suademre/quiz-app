@@ -1,3 +1,23 @@
-main{
-    overflow: auto;
+main {
+  overflow: auto;
 }
+
+/* .main .main__hidden {
+  display: none;
+}
+.main .main__active {
+  display: none;
+} */
+/* header,
+main {
+  display: none;
+} */
+
+.hidden {
+  display: none;
+}
+
+/* .active {
+  display: block;
+}
+ */

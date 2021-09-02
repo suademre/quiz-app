@@ -1,119 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f421a46cb5.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f421a46cb5.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Quiz App</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="javascript.js" defer></script>
+  </head>
 
-<body>
-
-    <header>
-        <h1>QUIZ-APP</h1>
+  <body>
+    <header class="header_questions">
+      <h1>QUIZ-APP</h1>
     </header>
 
-    <main>
-        <section class="card">
-            <button class="bookmark">
-            </button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show answer</button>
-            <p class="card__answer card__answer--hidden">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
-                eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
-                Placeat, quae cupiditate deleniti
-            </p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-                <li class="tags__item">Structure</li>
-            </ul>
-        </section>
-        <section class="card">
-            <button class="bookmark2">
-            </button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show answer</button>
-            <p class="card__answer card__answer--hidden">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
-                eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
-                Placeat, quae cupiditate deleniti
-            </p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-            </ul>
-        </section>
-        <section class="card">
-            <button class="bookmark">
-            </button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show answer</button>
-            <p class="card__answer card__answer--hidden">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
-                eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
-                Placeat, quae cupiditate deleniti
-            </p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-            </ul>
-        </section>
-        <section class="card">
-            <button class="bookmark2">
-            </button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show answer</button>
-            <p class="card__answer card__answer--hidden">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
-                eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
-                Placeat, quae cupiditate deleniti
-            </p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-            </ul>
-        </section>
-        <section class="card-end">
-            <button class="bookmark">
-            </button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show answer</button>
-            <p class="card__answer card__answer--hidden">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
-                eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
-                Placeat, quae cupiditate deleniti
-            </p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-            </ul>
-        </section>
+    <header class="header_bookmark hidden">
+      <h1>BOOKMARKS</h1>
+    </header>
 
+    <header class="header_create hidden">
+      <h1>CREATE</h1>
+    </header>
 
+    <header class="header_profile hidden">
+      <h1>Profile</h1>
+    </header>
 
+    <!-- Toggle -->
+    <input class="toggle_input" type="checkbox" id="button" />
+
+    <label class="toogle_label" for="button">Toggle me</label>
+
+    <main class="main main__questions">
+      <section class="card">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+      <section class="card">
+        <button class="bookmark2"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+      <section class="card">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+      <section class="card">
+        <button class="bookmark2"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+      <section class="card-end">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+    </main>
+
+    <main class="main main__bookmark hidden">
+      <section class="card">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+
+      <section class="card-end">
+        <button class="bookmark"></button>
+        <h2 class="card__question">What is BEM?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+          eligendi dignissimos nam, consectetur repellat? Ipsam, totam porro.
+          Placeat, quae cupiditate deleniti
+        </p>
+        <ul class="tags">
+          <li class="tags__item">BEM</li>
+          <li class="tags__item">CSS</li>
+          <li class="tags__item">Structure</li>
+        </ul>
+      </section>
+    </main>
+
+    <main class="main main__create hidden">
+      <h2>Add New Question and Answer</h2>
+
+      <form class="form">
+        <label class="form__label" for="question">Add Question</label>
+        <textarea
+          class="form__textarea"
+          name=""
+          id="question"
+          cols="30"
+          rows="3"
+          placeholder="Add your Question.."
+        ></textarea>
+        <label class="form__label" for="answer">Add Answer</label>
+        <textarea
+          class="form__textarea"
+          name=""
+          id="answer"
+          cols="30"
+          rows="3"
+          placeholder="Add your Answer.."
+        ></textarea>
+        <label class="form__label" for="tags">Add Tags</label>
+        <textarea
+          class="form__textarea"
+          name=""
+          id="tags"
+          cols="30"
+          rows="3"
+          placeholder="Add your Tags.."
+        ></textarea>
+        <button class="form__button" type="submit">Send</button>
+      </form>
+    </main>
+
+    <main class="main main__profile hidden">
+      <section class="card-profil">
+        <h2>About Me</h2>
+        <div class="profil-img">
+          <img src="./images/foto.jpg" alt="" />
+          <h3 class="profil-name">Suad Emre UMAR</h3>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odio
+          minus hic, vel voluptas adipisci eaque a sapiente voluptatem aliquam
+          distinctio impedit sint tenetur fugiat itaque corporis quasi. Placeat
+          aliquid enim, excepturi ipsa at obcaecati dolorum esse rem expedita
+          harum veniam laboriosam voluptatum, commodi quasi, distinctio
+          aspernatur! Esse, tempora reprehenderit!
+        </p>
+
+        <div class="tech-skills">
+          <h3>Tech-Skills</h3>
+          <ul>
+            <li>HTML&CSS</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <button class="profil-logaut">Logout</button>
+      </section>
     </main>
 
     <footer>
-        <div class="footer_icon">
-            <!-- <button class="bookmark3"></button> -->
-            <a href="./index.html"><i class="fas fa-house-damage"></i></a>
-            <a href="./bookmark.html"><button class="bookmark3"></button></a>
-            <a href="./create.html"><i class="fas fa-pen"></i></a>
-            <a href="./profile.html"><i class="fas fa-user-circle"></i></a>
-        </div>
-
+      <div class="footer_icon">
+        <!-- <button class="bookmark3"></button> -->
+        <button class="button_questions">
+          <i class="fas fa-house-damage"></i>
+        </button>
+        <button class="bookmark3 button_bookmark"></button>
+        <button class="button_create"><i class="fas fa-pen"></i></button>
+        <button class="button_profile">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
