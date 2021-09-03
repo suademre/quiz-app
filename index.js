@@ -110,7 +110,7 @@ cardButtons.forEach(cardButton => {
 
 const formButton = getEl('.form__button')
 
-formButton.addEventListener('click', e => {
+formButton.addEventListener('submit', e => {
   let formInputs = getElAll('.form__textarea')
   formInputs.forEach(formInput => {
     formInput.value = ''
