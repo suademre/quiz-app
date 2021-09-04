@@ -2,22 +2,13 @@ main {
   overflow: auto;
 }
 
-/* .main .main__hidden {
-  display: none;
-}
-.main .main__active {
-  display: none;
-} */
-/* header,
-main {
-  display: none;
-} */
-
+/* Single Page Application */
 .hidden {
   display: none;
 }
 
-/* .active {
-  display: block;
+/* Toggle Show Answer */
+
+.card__answer--hidden {
+  display: none;
 }
- */

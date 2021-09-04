@@ -10,30 +10,25 @@
     ></script>
     <title>Quiz App</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="javascript.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
 
   <body>
-    <header class="header_questions">
+    <header class="header header_questions">
       <h1>QUIZ-APP</h1>
     </header>
 
-    <header class="header_bookmark hidden">
+    <header class="header header_bookmark hidden">
       <h1>BOOKMARKS</h1>
     </header>
 
-    <header class="header_create hidden">
+    <header class="header header_create hidden">
       <h1>CREATE</h1>
     </header>
 
-    <header class="header_profile hidden">
+    <header class="header header_profile hidden">
       <h1>Profile</h1>
     </header>
-
-    <!-- Toggle -->
-    <input class="toggle_input" type="checkbox" id="button" />
-
-    <label class="toogle_label" for="button">Toggle me</label>
 
     <main class="main main__questions">
       <section class="card">
@@ -53,7 +48,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="bookmark2"></button>
+        <button class="bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">
@@ -83,7 +78,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="bookmark2"></button>
+        <button class="bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">
@@ -196,7 +191,7 @@
           rows="3"
           placeholder="Add your Tags.."
         ></textarea>
-        <button class="form__button" type="submit">Send</button>
+        <button class="form__button" type="button">Send</button>
       </form>
     </main>
 
