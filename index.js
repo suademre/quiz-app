@@ -108,13 +108,79 @@ cardButtons.forEach(cardButton => {
   })
 })
 
-const formButton = getEl('.form__button')
+// Clear Input from Form
 
-formButton.addEventListener('submit', e => {
+// Erste variante
+const formButton = getEl('.form__button')
+formButton.addEventListener('click', () => {
+  getEl('form').reset()
+})
+
+// Zweite variante
+
+/* formButton.addEventListener('submit', e => {
   let formInputs = getElAll('.form__textarea')
   formInputs.forEach(formInput => {
     formInput.value = ''
   })
+}) */
 
-  e.preventDefault()
-})
+/* Dark Mode */
+const darkMode = getEl('.darkMode')
+
+/* darkMode.addEventListener('click', e => {
+  const body = getEl('body')
+  body.classList.toggle('darkModeActive')
+  e.target.parentNode.parentNode.parentNode.classList.toggle('active')
+}) */
+
+function darkModeBody() {
+  const body = getEl('body')
+  body.classList.toggle('active')
+}
+
+function darkModeHeader() {
+  const darkModeHeaderSites = getElAll('.headers')
+  darkModeHeaderSites.forEach(darkModeHeaderSite => {
+    darkModeHeaderSite.classList.toggle('darkModeHeader')
+  })
+}
+
+function darkModeCards() {
+  const darkModeCardsSites = getElAll('.card')
+  darkModeCardsSites.forEach(darkModeCardSite => {
+    darkModeCardSite.classList.toggle('darkModeCard')
+  })
+}
+
+function darkModeLi() {
+  const darkModeLies = getElAll('.tags__item')
+  darkModeLies.forEach(darkModeLi => {
+    darkModeLi.classList.toggle('darkModeLi')
+  })
+}
+
+function darkModeForm() {
+  const darkModeForm = getEl('.form')
+  darkModeForm.classList.toggle('formDarkMode')
+}
+
+function darkModeProfile() {
+  const darkModeForm = getEl('.card-profil')
+  darkModeForm.classList.toggle('darkModeProfile')
+}
+
+function darkModeFooters() {
+  const darkModeFooters = getEl('.footer')
+  darkModeFooters.classList.toggle('darkModeFooter')
+}
+
+function darkModes() {
+  darkModeBody()
+  darkModeHeader()
+  darkModeCards()
+  darkModeLi()
+  darkModeForm()
+  darkModeProfile()
+  darkModeFooters()
+}
