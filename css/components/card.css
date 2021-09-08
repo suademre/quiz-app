@@ -10,14 +10,20 @@ main {
   margin-top: 30px;
   position: relative;
 }
-.card-end {
+
+#card {
   width: 100%;
-  background-color: white;
   padding: 20px 10px;
   border-radius: 15px;
   margin-top: 30px;
   margin-bottom: 100px;
   position: relative;
+}
+
+.darkModeCard {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
 }
 
 ul {
@@ -35,6 +41,11 @@ li {
   margin-top: 20px;
   border-radius: 15px;
   border: 2px solid #884bd7;
+}
+
+.darkModeLi {
+  color: black;
+  background-color: white;
 }
 
 li:hover {

@@ -15,19 +15,19 @@
 
   <body>
     <header class="header header_questions">
-      <h1>QUIZ-APP</h1>
+      <h1 class="headers">QUIZ-APP</h1>
     </header>
 
     <header class="header header_bookmark hidden">
-      <h1>BOOKMARKS</h1>
+      <h1 class="headers">BOOKMARKS</h1>
     </header>
 
     <header class="header header_create hidden">
-      <h1>CREATE</h1>
+      <h1 class="headers">CREATE</h1>
     </header>
 
     <header class="header header_profile hidden">
-      <h1>Profile</h1>
+      <h1 class="headers">Profile</h1>
     </header>
 
     <main class="main main__questions">
@@ -92,7 +92,7 @@
           <li class="tags__item">Structure</li>
         </ul>
       </section>
-      <section class="card-end">
+      <section class="card" id="card">
         <button class="bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button">Show answer</button>
@@ -143,7 +143,7 @@
         </ul>
       </section>
 
-      <section class="card-end">
+      <section class="card" id="card">
         <button class="bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button">Show answer</button>
@@ -213,13 +213,13 @@
 
         <div class="tech-skills">
           <h3>Tech-Skills</h3>
-          <ul>
-            <li>HTML&CSS</li>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>SQL</li>
+          <ul class="tags">
+            <li class="tags__item">HTML&CSS</li>
+            <li class="tags__item">JavaScript</li>
+            <li class="tags__item">React.js</li>
+            <li class="tags__item">Node.js</li>
+            <li class="tags__item">Python</li>
+            <li class="tags__item">SQL</li>
           </ul>
         </div>
 
@@ -227,7 +227,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="footer_icon">
         <!-- <button class="bookmark3"></button> -->
         <button class="button_questions">
@@ -238,6 +238,11 @@
         <button class="button_profile">
           <i class="fas fa-user-circle"></i>
         </button>
+        <!-- <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"> Dark Mode</span>
+        </label> -->
+        <button onclick="darkModes()">Dark Mode</button>
       </div>
     </footer>
   </body>

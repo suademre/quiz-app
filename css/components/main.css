@@ -12,3 +12,7 @@ main {
 .card__answer--hidden {
   display: none;
 }
+
+.active {
+  background-color: #141414;
+}
