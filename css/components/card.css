@@ -70,9 +70,9 @@ li:hover {
   transition: transform 1s;
 }
 
-.bookmark:hover {
+/* .bookmark:hover {
   transform: rotate(360deg);
-}
+} */
 
 .bookmark2 {
   position: absolute;
