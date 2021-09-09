@@ -1,3 +1,22 @@
+// Header
+const headerQuestions = getEl('.header_questions')
+const headerBookmark = getEl('.header_bookmark')
+const headerCreate = getEl('.header_create')
+const headerProfile = getEl('.header_profile')
+
+// Main
+const mainQuestions = getEl('.main__questions')
+const mainBookmarkt = getEl('.main__bookmark')
+const mainCreate = getEl('.main__create')
+const mainProfile = getEl('.main__profile')
+
+// Button
+
+const buttonQuestions = getEl('.button_questions')
+const buttonBookmark = getEl('.button_bookmark')
+const buttonCreate = getEl('.button_create')
+const buttonProfile = getEl('.button_profile')
+
 function getEl(selector) {
   const el = document.querySelector(selector)
   return el
@@ -8,32 +27,6 @@ function getElAll(selector) {
   return el
 }
 
-/* Header */
-const headerQuestions = getEl('.header_questions')
-const headerBookmark = getEl('.header_bookmark')
-const headerCreate = getEl('.header_create')
-const headerProfile = getEl('.header_profile')
-
-/* Main */
-const mainQuestions = getEl('.main__questions')
-const mainBookmarkt = getEl('.main__bookmark')
-const mainCreate = getEl('.main__create')
-const mainProfile = getEl('.main__profile')
-
-/* Button */
-
-const buttonQuestions = getEl('.button_questions')
-const buttonBookmark = getEl('.button_bookmark')
-const buttonCreate = getEl('.button_create')
-const buttonProfile = getEl('.button_profile')
-
-/* Bookmarkemojies */
-const bookmarks = getElAll('.bookmark')
-console.log(bookmarks)
-/* Card Buttons*/
-const cardButtons = getElAll('.card__button')
-
-// Funktion
 function hideAll() {
   const headerElArr = document.querySelectorAll('.header')
   headerElArr.forEach((headerEl, index) => {
@@ -44,21 +37,7 @@ function hideAll() {
   mainElArr.forEach((mainEl, index) => {
     mainEl.classList.add('hidden')
   })
-
-  /* headerQuestions.classList.add('hidden')
-  headerBookmark.classList.add('hidden')
-  headerCreate.classList.add('hidden')
-  headerProfile.classList.add('hidden')
-
-  mainQuestions.classList.add('hidden')
-  mainBookmarkt.classList.add('hidden')
-  mainCreate.classList.add('hidden')
-  mainProfile.classList.add('hidden') */
 }
-
-/* function addButtonEventListener(name) {
-   
- } */
 
 /* EventListener */
 buttonQuestions.addEventListener('click', () => {
@@ -68,6 +47,7 @@ buttonQuestions.addEventListener('click', () => {
 })
 buttonBookmark.addEventListener('click', () => {
   hideAll()
+  renderCards(filterBookmark(), bookmarkSection)
   headerBookmark.classList.remove('hidden')
   mainBookmarkt.classList.remove('hidden')
 })
@@ -82,105 +62,186 @@ buttonProfile.addEventListener('click', () => {
   mainProfile.classList.remove('hidden')
 })
 
-/*Toggle Bookmarks */
-for (let i = 0; i < bookmarks.length; i++) {
-  bookmarks[i].addEventListener('click', () => {
-    bookmarks[i].classList.toggle('bookmark2')
+//----------------------------------------------------------------
+
+//Data
+
+const datas = [
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+  {
+    question: 'What is BEM?',
+    answer:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['BEM', 'CSS', 'Structure'],
+  },
+]
+
+// Create new Card
+
+const addQuestion = (questionText, answerText, tagsList) => {
+  let newQuestion = {
+    question: questionText,
+    answer: answerText,
+    isBookmarked: false,
+    showAnswer: false,
+    tags: tagsList,
+  }
+
+  datas.push(newQuestion)
+}
+
+addQuestion('test', 'test', ['1', '2', '3'])
+
+const getData = () => {
+  return datas
+}
+
+const filterBookmark = () => {
+  const bookmarkedCards = datas.filter(data => data.isBookmarked)
+  console.log(bookmarkedCards)
+  return bookmarkedCards
+}
+
+// Section Variables
+
+const homeSection = getEl('#question')
+const bookmarkSection = getEl('#bookmark')
+
+//change isBookmarkt
+const changeStatus = data => {
+  data.isBookmarked = !data.isBookmarked
+  filterBookmark()
+}
+
+// Render Funktion
+function renderCards(cards, targetElement) {
+  targetElement.innerHTML = ''
+  cards.forEach(data => {
+    const cardSection = document.createElement('section')
+    cardSection.classList.add('card')
+    targetElement.appendChild(cardSection)
+
+    const cardBookmark = document.createElement('button')
+    cardBookmark.classList.add('bookmark')
+    cardBookmark.addEventListener('click', () => {
+      changeStatus(data)
+      /*  cardBookmark.classList.toggle('bookmark2') */
+      console.log(data)
+      console.log(cardBookmark.classList)
+      cardBookmark.classList.contains('bookmark2')
+        ? cardBookmark.classList.remove('bookmark2')
+        : cardBookmark.classList.add('bookmark2')
+      renderCards(filterBookmark(), bookmarkSection)
+    })
+
+    /* if (cards.isBookmarked) {
+      cardBookmark.classList.add('bookmark2')
+      cardBookmark.addEventListener('click', () => {
+        cardBookmark.classList.toggle('bookmark2')
+        datas.find(el => el === cards).isBookmarked = !datas.find(
+          el => el === cards
+        ).isBookmarked
+        data.isBookmarked = true
+      })
+    } */
+    cardSection.appendChild(cardBookmark)
+
+    const cardQuestion = document.createElement('h2')
+    cardQuestion.classList.add('card__question')
+    cardQuestion.textContent = data.question
+    cardSection.appendChild(cardQuestion)
+
+    const cardButton = document.createElement('button')
+    cardButton.classList.add('card__button')
+    cardButton.textContent = 'Show answer'
+    cardButton.addEventListener('click', () => {
+      cardButton.nextElementSibling.classList.toggle('card__answer--hidden')
+    })
+
+    cardSection.appendChild(cardButton)
+
+    const cardAnswer = document.createElement('p')
+    cardAnswer.classList.add('card__answer')
+    cardAnswer.textContent = data.answer
+    cardSection.appendChild(cardAnswer)
+
+    const cardTags = document.createElement('ul')
+    cardTags.classList.add('tags')
+    cardSection.appendChild(cardTags)
+
+    data.tags.forEach(tag => {
+      const cardTag1 = document.createElement('li')
+      cardTag1.classList.add('tags__item')
+      cardTag1.textContent = tag
+      cardTags.appendChild(cardTag1)
+    })
   })
 }
 
-/*Toggle Answers*/
-/* for (let i = 0; i < cardButtons.length; i++) {
-  cardButtons[i].addEventListener('click', () => {
-    cardButtons[i].nextElementSibling.classList.toggle('card__answer--hidden')
-    cardButtons[i].classList.toggle('hide__button')
-    if (cardButtons[i].innerText === 'Show answer') {
-      cardButtons[i].innerText === 'Hide Answer'
-    } else {
-      cardButtons[i].innerText === 'Show Answer'
-    }
-  })
-} */
+// card Bookmark
+const bookmarks = getElAll('.bookmark')
 
-cardButtons.forEach(cardButton => {
-  cardButton.addEventListener('click', () => {
-    cardButton.nextElementSibling.classList.toggle('card__answer--hidden')
-  })
+//AnswerButons
+const answerButtons = getElAll('.card__button')
+
+//Reset form und Create new Card on Form submit
+form = getEl('.form')
+submitButton = getEl('.form__button')
+submitButton.addEventListener('click', () => {
+  const question = document.getElementById('question').value
+
+  const answer = document.getElementById('answer').value
+  const tags = document.getElementById('tags').value.split(', ')
+  console.log(tags)
+  addQuestion(question, answer, tags)
+  renderCards(datas, homeSection)
+  renderCards(filterBookmark(), bookmarkSection)
+  form.reset()
 })
 
-// Clear Input from Form
-
-// Erste variante
-const formButton = getEl('.form__button')
-formButton.addEventListener('click', () => {
-  getEl('form').reset()
-})
-
-// Zweite variante
-
-/* formButton.addEventListener('submit', e => {
-  let formInputs = getElAll('.form__textarea')
-  formInputs.forEach(formInput => {
-    formInput.value = ''
-  })
-}) */
-
-/* Dark Mode */
-const darkMode = getEl('.darkMode')
-
-/* darkMode.addEventListener('click', e => {
-  const body = getEl('body')
-  body.classList.toggle('darkModeActive')
-  e.target.parentNode.parentNode.parentNode.classList.toggle('active')
-}) */
-
-function darkModeBody() {
-  const body = getEl('body')
-  body.classList.toggle('active')
+function init() {
+  renderCards(datas, homeSection)
 }
 
-function darkModeHeader() {
-  const darkModeHeaderSites = getElAll('.headers')
-  darkModeHeaderSites.forEach(darkModeHeaderSite => {
-    darkModeHeaderSite.classList.toggle('darkModeHeader')
-  })
-}
-
-function darkModeCards() {
-  const darkModeCardsSites = getElAll('.card')
-  darkModeCardsSites.forEach(darkModeCardSite => {
-    darkModeCardSite.classList.toggle('darkModeCard')
-  })
-}
-
-function darkModeLi() {
-  const darkModeLies = getElAll('.tags__item')
-  darkModeLies.forEach(darkModeLi => {
-    darkModeLi.classList.toggle('darkModeLi')
-  })
-}
-
-function darkModeForm() {
-  const darkModeForm = getEl('.form')
-  darkModeForm.classList.toggle('formDarkMode')
-}
-
-function darkModeProfile() {
-  const darkModeForm = getEl('.card-profil')
-  darkModeForm.classList.toggle('darkModeProfile')
-}
-
-function darkModeFooters() {
-  const darkModeFooters = getEl('.footer')
-  darkModeFooters.classList.toggle('darkModeFooter')
-}
-
-function darkModes() {
-  darkModeBody()
-  darkModeHeader()
-  darkModeCards()
-  darkModeLi()
-  darkModeForm()
-  darkModeProfile()
-  darkModeFooters()
-}
+init()
