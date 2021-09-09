@@ -66,7 +66,7 @@ buttonProfile.addEventListener('click', () => {
 
 //Data
 
-const datas = [
+/* const datas = [
   {
     question: 'What is BEM?',
     answer:
@@ -115,12 +115,28 @@ const datas = [
     showAnswer: false,
     tags: ['BEM', 'CSS', 'Structure'],
   },
-]
+] */
+
+//add Storage
+
+const getStorage = () => {
+  let data
+  if (JSON.parse(localStorage.getItem('item')) === null) data = []
+  else data = JSON.parse(localStorage.getItem('item'))
+  return data
+}
+
+const setStorage = data => {
+  const temp = getStorage()
+  temp.push(data)
+  localStorage.setItem('item', JSON.stringify(temp))
+}
 
 // Create new Card
 
 const addQuestion = (questionText, answerText, tagsList) => {
   let newQuestion = {
+    id: getStorage().length + 1,
     question: questionText,
     answer: answerText,
     isBookmarked: false,
@@ -128,17 +144,13 @@ const addQuestion = (questionText, answerText, tagsList) => {
     tags: tagsList,
   }
 
-  datas.push(newQuestion)
+  setStorage(newQuestion)
 }
 
-addQuestion('test', 'test', ['1', '2', '3'])
-
-const getData = () => {
-  return datas
-}
+/* addQuestion('test', 'test', ['1', '2', '3']) */
 
 const filterBookmark = () => {
-  const bookmarkedCards = datas.filter(data => data.isBookmarked)
+  const bookmarkedCards = getStorage().filter(data => data.isBookmarked)
   console.log(bookmarkedCards)
   return bookmarkedCards
 }
@@ -150,12 +162,17 @@ const bookmarkSection = getEl('#bookmark')
 
 //change isBookmarkt
 const changeStatus = data => {
-  data.isBookmarked = !data.isBookmarked
+  const items = getStorage()
+  const index = getStorage().findIndex(d => d.id === data.id)
+  console.log(index)
+  items[index].isBookmarked = !items[index].isBookmarked
+  localStorage.setItem('item', JSON.stringify(items))
   filterBookmark()
 }
 
 // Render Funktion
 function renderCards(cards, targetElement) {
+  console.log(cards)
   targetElement.innerHTML = ''
   cards.forEach(data => {
     const cardSection = document.createElement('section')
@@ -230,18 +247,19 @@ form = getEl('.form')
 submitButton = getEl('.form__button')
 submitButton.addEventListener('click', () => {
   const question = document.getElementById('question').value
-
   const answer = document.getElementById('answer').value
-  const tags = document.getElementById('tags').value.split(', ')
+  const tags = document.getElementById('tags').value.split(',')
   console.log(tags)
   addQuestion(question, answer, tags)
-  renderCards(datas, homeSection)
+  renderCards(getStorage(), homeSection)
   renderCards(filterBookmark(), bookmarkSection)
   form.reset()
 })
 
+console.log(getStorage())
+
 function init() {
-  renderCards(datas, homeSection)
+  document.body.onload = renderCards(getStorage(), homeSection)
 }
 
 init()
